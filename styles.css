@@ -1,0 +1,572 @@
+:root {
+    --bg-color: #f7f5ee;
+    --grid-color: rgba(160, 150, 130, 0.15);
+    --text-main: #2b2927;
+    --text-muted: #6b6762;
+    --primary: #1b365d;
+    --accent: #c2593f;
+    --card-bg: #fff;
+    --border-color: rgba(160, 150, 130, 0.35);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 0;
+    background-color: var(--bg-color);
+    background-image:
+        linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+    background-size: 28px 28px;
+    color: var(--text-main);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 16px 32px;
+    border-bottom: 1px solid var(--border-color);
+    background: rgba(247, 245, 238, 0.94);
+    backdrop-filter: blur(8px);
+}
+
+.logo {
+    flex-shrink: 0;
+    color: var(--primary);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.site-header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px 22px;
+}
+
+.site-header nav a {
+    color: var(--text-muted);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.site-header nav a:hover,
+.site-header nav a[aria-current="page"] {
+    color: var(--accent);
+}
+
+main {
+    width: min(100% - 48px, 960px);
+    margin: 0 auto;
+    padding: 64px 0 96px;
+}
+
+.hero {
+    margin-bottom: 76px;
+}
+
+.page-intro {
+    margin-bottom: 72px;
+}
+
+.eyebrow,
+.section-header,
+.card-meta,
+.routine-time,
+.contact-label {
+    color: var(--accent);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.eyebrow {
+    margin-bottom: 16px;
+}
+
+.eyebrow span {
+    padding: 0 4px;
+}
+
+h1,
+h2,
+.feature-title,
+.card-title,
+.exp-role {
+    color: var(--primary);
+    font-family: "Instrument Serif", Georgia, serif;
+    font-weight: 400;
+}
+
+h1 {
+    margin-bottom: 18px;
+    font-size: clamp(3.2rem, 8vw, 4.5rem);
+    line-height: 1.04;
+}
+
+h1 .italic {
+    color: var(--text-main);
+    font-style: italic;
+}
+
+.hero-title {
+    margin-bottom: 20px;
+    color: var(--primary);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1rem;
+}
+
+.bio {
+    max-width: 720px;
+    margin-bottom: 32px;
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    line-height: 1.75;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 11px 22px;
+    border: 1.5px solid var(--primary);
+    border-radius: 4px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #122540;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary);
+}
+
+.btn-secondary:hover {
+    background: rgba(27, 54, 93, 0.06);
+}
+
+section {
+    margin-bottom: 76px;
+}
+
+.section-header {
+    margin-bottom: 14px;
+}
+
+h2 {
+    margin-bottom: 22px;
+    font-size: clamp(2.2rem, 5vw, 2.8rem);
+    line-height: 1.15;
+}
+
+.philosophy-text {
+    max-width: 800px;
+    margin-bottom: 20px;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+.home-value {
+    margin-bottom: 76px;
+    padding: 32px;
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.philosophy-quote {
+    margin-bottom: 16px;
+    color: var(--primary);
+    font-family: "Instrument Serif", Georgia, serif;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.text-link {
+    color: var(--primary);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+}
+
+.text-link:hover {
+    color: var(--accent);
+}
+
+.feature-grid,
+.lessons-grid,
+.pillars-grid,
+.courses-grid,
+.routine-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.feature-card,
+.project-card,
+.pillar-card,
+.course-box,
+.routine-card,
+.exp-item,
+.note-card,
+.contact-panel {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--card-bg);
+}
+
+.feature-card {
+    display: flex;
+    min-height: 190px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    text-decoration: none;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+a.feature-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+}
+
+.card-meta {
+    margin-bottom: 10px;
+    font-size: 0.7rem;
+}
+
+.feature-title {
+    margin-bottom: 8px;
+    font-size: 1.7rem;
+    line-height: 1.2;
+}
+
+.feature-desc,
+.card-desc,
+.pillar-desc,
+.exp-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.pillars-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 28px;
+}
+
+.pillar-card,
+.course-box,
+.routine-card,
+.project-card,
+.note-card {
+    padding: 24px;
+}
+
+.pillar-title {
+    margin-bottom: 8px;
+    color: var(--primary);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.courses-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.course-box h3 {
+    margin-bottom: 16px;
+    color: var(--primary);
+    font-family: "Instrument Serif", Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.course-list {
+    list-style: none;
+}
+
+.course-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 9px 0;
+    border-bottom: 1px dashed var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.course-list li:last-child {
+    border-bottom: 0;
+}
+
+.course-list li span:last-child {
+    color: var(--primary);
+    text-align: right;
+}
+
+.timeline {
+    display: grid;
+    gap: 16px;
+}
+
+.exp-item {
+    padding: 24px 28px;
+}
+
+.exp-role {
+    margin-bottom: 4px;
+    font-size: 1.75rem;
+}
+
+.exp-company {
+    margin-bottom: 12px;
+    color: var(--accent);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.77rem;
+    text-transform: uppercase;
+}
+
+.routine-grid {
+    margin: 28px 0 20px;
+}
+
+.routine-time {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 0.72rem;
+}
+
+.routine-card .card-title,
+.project-card .card-title {
+    margin-bottom: 8px;
+    font-size: 1.65rem;
+}
+
+.note-card {
+    padding: 22px 24px;
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.project-card {
+    display: flex;
+    min-height: 220px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.project-card .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+.tag {
+    padding: 3px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: rgba(160, 150, 130, 0.1);
+    color: var(--text-main);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.7rem;
+}
+
+.resume-frame {
+    overflow: hidden;
+    min-height: 480px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--card-bg);
+}
+
+.resume-frame iframe {
+    display: block;
+    width: 100%;
+    height: 600px;
+    border: 0;
+}
+
+.contact-panel {
+    padding: 32px;
+}
+
+.contact-list {
+    display: grid;
+    gap: 0;
+    margin: 24px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.contact-link {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 24px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+.contact-link span:last-child {
+    overflow-wrap: anywhere;
+}
+
+a.contact-link:hover span:last-child {
+    color: var(--accent);
+}
+
+.contact-label {
+    font-size: 0.72rem;
+}
+
+.page-next {
+    padding-top: 4px;
+}
+
+footer {
+    padding: 36px 24px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.78rem;
+    text-align: center;
+}
+
+footer span {
+    padding: 0 4px;
+    color: var(--accent);
+}
+
+@media (max-width: 760px) {
+    .site-header {
+        position: static;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+        padding: 16px 22px;
+    }
+
+    .site-header nav {
+        justify-content: flex-start;
+        gap: 8px 16px;
+    }
+
+    main {
+        width: min(100% - 40px, 960px);
+        padding: 44px 0 72px;
+    }
+
+    .hero {
+        margin-bottom: 56px;
+    }
+
+    .page-intro {
+        margin-bottom: 52px;
+    }
+
+    section,
+    .home-value {
+        margin-bottom: 56px;
+    }
+}
+
+@media (max-width: 560px) {
+    .feature-grid,
+    .lessons-grid,
+    .pillars-grid,
+    .courses-grid,
+    .routine-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-value,
+    .contact-panel {
+        padding: 22px;
+    }
+
+    .exp-item {
+        padding: 20px;
+    }
+
+    .resume-frame {
+        min-height: 360px;
+    }
+
+    .resume-frame iframe {
+        height: 380px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}
