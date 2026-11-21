@@ -19,6 +19,10 @@ html {
     scroll-behavior: smooth;
 }
 
+[id] {
+    scroll-margin-top: 88px;
+}
+
 body {
     min-width: 0;
     background-color: var(--bg-color);
@@ -93,6 +97,48 @@ main {
 
 .hero {
     margin-bottom: 76px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    align-items: center;
+    gap: 42px;
+}
+
+.hero-content {
+    min-width: 0;
+}
+
+.stats-card {
+    padding: 24px;
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.stat-item + .stat-item {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.stat-item dt {
+    margin-bottom: 4px;
+    color: var(--accent);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.stat-item dd {
+    color: var(--primary);
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.45;
 }
 
 .page-intro {
@@ -501,11 +547,14 @@ footer span {
 
 @media (max-width: 760px) {
     .site-header {
-        position: static;
         align-items: flex-start;
         flex-direction: column;
         gap: 14px;
         padding: 16px 22px;
+    }
+
+    [id] {
+        scroll-margin-top: 150px;
     }
 
     .site-header nav {
@@ -520,6 +569,15 @@ footer span {
 
     .hero {
         margin-bottom: 56px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .stats-card {
+        width: 100%;
     }
 
     .page-intro {
